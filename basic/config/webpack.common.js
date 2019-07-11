@@ -38,10 +38,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         use: {
           loader: 'url-loader',
-          options: {
-            limit: 8192,
-            name: 'static/[name].[ext]?[hash:6]'
-          }
+          options: { limit: 8192 }
         }
       }
     ]
