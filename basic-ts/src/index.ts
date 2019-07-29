@@ -1,9 +1,10 @@
 import './css/reset.css';
 import './css/iconfont.css';
 import './css/style.less';
+import './basic';
 
 
-function debounce(fn: Function, time: number): any {
+const debounce = (fn: Function, time: number): any => {
     let timeout: NodeJS.Timer = null;
     return (...args: any[]) => {
       clearTimeout(timeout);
@@ -14,8 +15,33 @@ function debounce(fn: Function, time: number): any {
 }
 
 
+
+
+// 《5分钟上手Typescript》代码验证
+// https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html
+
+class Student {
+  fullName: string;
+  constructor(public firstName: string, public middleInitial: string, public lastName: string) {
+      this.fullName = firstName + " " + middleInitial + " " + lastName;
+  }
+}
+
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+function greeter(person : Person) {
+  return " - " + person.firstName + "/" + person.lastName;
+}
+
+let user = new Student("Weedust", ".", "ldc4");
+
 setTimeout(() => {
   document.getElementsByClassName('content')[0].addEventListener('mouseover', debounce(() => {
     console.log('哟');
   }, 500));
+
+  document.getElementsByClassName('author')[0].innerHTML = greeter(user);
 }, 1000);
