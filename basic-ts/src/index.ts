@@ -15,8 +15,6 @@ const debounce = (fn: Function, time: number): any => {
 }
 
 
-
-
 // 《5分钟上手Typescript》代码验证
 // https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html
 
@@ -38,10 +36,8 @@ function greeter(person : Person) {
 
 let user = new Student("Weedust", ".", "ldc4");
 
-setTimeout(() => {
-  document.getElementsByClassName('content')[0].addEventListener('mouseover', debounce(() => {
-    console.log('哟');
-  }, 500));
+document.getElementsByClassName('content')[0].addEventListener('mouseover', debounce(() => {
+  console.log('哟');
+}, 500));
 
-  document.getElementsByClassName('author')[0].innerHTML = greeter(user);
-}, 1000);
+document.getElementsByClassName('author')[0].innerHTML = greeter(user);

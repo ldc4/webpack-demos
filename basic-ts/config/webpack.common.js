@@ -65,7 +65,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      inject: 'head',
       minify: {
         collapseWhitespace: true
       }
